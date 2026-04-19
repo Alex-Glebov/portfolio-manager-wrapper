@@ -1,0 +1,21 @@
+; Portfolio Manager API Configuration
+; Copy this file to PortfolioManager_API_Config.ini and fill in your settings
+
+[connection]
+host = localhost
+port = 8000
+timeout = 30
+verify_ssl = true
+
+[auth]
+username = admin
+; Password is NOT recommended here - use environment variable PORTFOLIO_MANAGER_PASSWORD instead
+; password = your_password_here
+
+[logging]
+level = INFO
+file = portfolio_manager_wrapper.log
+
+[token]
+; Refresh token 60 seconds before expiry
+refresh_buffer = 60
