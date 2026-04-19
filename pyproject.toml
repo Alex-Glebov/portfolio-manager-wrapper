@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-manager-wrapper"
+dynamic = ["version"]
+description = "Python wrapper for Portfolio Manager API - sync and async support"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Developer", email = "dev@example.com"}
+]
+keywords = ["portfolio", "api", "wrapper", "fastapi", "csv"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "httpx>=0.25.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Alex-Glebov/portfolio-manager-wrapper"
+Documentation = "https://github.com/Alex-Glebov/portfolio-manager-wrapper/wiki"
+Repository = "https://github.com/Alex-Glebov/portfolio-manager-wrapper"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["portfolio_manager_wrapper*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "portfolio_manager_wrapper.__version__"}
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+pythonpath = ["."]
