@@ -77,7 +77,7 @@ class Config:
         self._warnings = []
 
         # Load from config file
-        config_file_path = config_path or self.DEFAULT_CONFIG_FILENAME
+        config_file_path = config_path or DEFAULT_CONFIG_FILENAME
         self._load_config_file(config_file_path)
 
         # Build final config with priority
